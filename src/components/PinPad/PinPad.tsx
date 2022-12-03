@@ -1,6 +1,6 @@
 import Button from "../Button/Button";
 import Display from "../Display/Display";
-import "./PinPad.css";
+import "./pinpad.css";
 
 const PinPad = (): JSX.Element => {
   return (
