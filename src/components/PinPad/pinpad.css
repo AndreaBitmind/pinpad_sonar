@@ -1,0 +1,11 @@
+.pinPad-container {
+  border: 1px solid black;
+  border-radius: 15px;
+  max-width: 600px;
+  height: 800px;
+  display: flex;
+  padding: 47px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
