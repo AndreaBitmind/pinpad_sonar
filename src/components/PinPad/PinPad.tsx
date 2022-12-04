@@ -11,22 +11,31 @@ const messageERROR = ["ERROR"];
 
 const PinPad = (): JSX.Element => {
   const [result, setResult] = useState(initialState);
+  const [displayedResult, setDisplayedResult] = useState(initialState);
 
   const handleChange = (digit: number) => {
     if (result.length < 4) {
       setResult([...result, digit.toString()]);
+      setDisplayedResult([...displayedResult, "*"]);
+
+      if (result.length === 3) {
+        setDisplayedResult([...displayedResult, digit.toString()]);
+      }
     }
   };
 
   useEffect(() => {
     if (result.length === 4) {
       if (pin.toString() === result.toString()) {
-        setTimeout(() => setResult(messageOK), 1000);
+        setTimeout(() => setDisplayedResult(messageOK), 1000);
       } else {
-        setTimeout(() => setResult(messageERROR), 1000);
+        setTimeout(() => setDisplayedResult(messageERROR), 1000);
       }
 
-      setTimeout(() => setResult([]), 2000);
+      setTimeout(() => {
+        setDisplayedResult([]);
+        setResult([]);
+      }, 2000);
     }
   }, [result]);
 
@@ -40,7 +49,7 @@ const PinPad = (): JSX.Element => {
 
   return (
     <div className="pinpad-container">
-      <Display result={result} />
+      <Display result={displayedResult} />
       <ul className="pinpad">{digits}</ul>
     </div>
   );
