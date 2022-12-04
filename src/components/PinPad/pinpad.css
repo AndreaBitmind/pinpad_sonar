@@ -1,11 +1,20 @@
 .pinpad-container {
   border: 1px solid black;
   border-radius: 15px;
-  max-width: 600px;
+  max-width: 330px;
   height: 800px;
   display: flex;
   padding: 47px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
