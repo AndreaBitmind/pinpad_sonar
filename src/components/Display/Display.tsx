@@ -1,7 +1,11 @@
 import "./display.css";
 
-const Display = (): JSX.Element => {
-  return <div className="display">X</div>;
+interface DisplayProps {
+  result: string[];
+}
+
+const Display = ({ result }: DisplayProps): JSX.Element => {
+  return <div className="display">{result}</div>;
 };
 
 export default Display;
