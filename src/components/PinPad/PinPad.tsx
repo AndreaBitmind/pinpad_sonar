@@ -8,6 +8,10 @@ const pin = ["8", "5", "3", "0"];
 const initialState: string[] = [];
 const messageOK = ["OK"];
 const messageERROR = ["ERROR"];
+const messageLOCKED = ["LOCKED"];
+let attempt = 0;
+let timeOut: NodeJS.Timeout;
+let interval = 1000;
 
 const PinPad = (): JSX.Element => {
   const [result, setResult] = useState(initialState);
@@ -27,15 +31,23 @@ const PinPad = (): JSX.Element => {
   useEffect(() => {
     if (result.length === 4) {
       if (pin.toString() === result.toString()) {
-        setTimeout(() => setDisplayedResult(messageOK), 1000);
+        timeOut = setTimeout(() => setDisplayedResult(messageOK), interval);
       } else {
-        setTimeout(() => setDisplayedResult(messageERROR), 1000);
+        attempt++;
+        timeOut = setTimeout(() => setDisplayedResult(messageERROR), interval);
       }
 
-      setTimeout(() => {
+      if (attempt === 3) {
+        clearTimeout(timeOut);
+        timeOut = setTimeout(() => setDisplayedResult(messageLOCKED), interval);
+        attempt = 0;
+        interval = 30000;
+      }
+
+      timeOut = setTimeout(() => {
         setDisplayedResult([]);
         setResult([]);
-      }, 2000);
+      }, interval + 1000);
     }
   }, [result]);
 
