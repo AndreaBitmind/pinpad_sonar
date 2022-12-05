@@ -61,6 +61,7 @@ const PinPad = (): JSX.Element => {
 
   return (
     <div className="pinpad-container">
+      <div className="pinpad-container_header"></div>
       <Display result={displayedResult} />
       <ul className="pinpad">{digits}</ul>
     </div>
