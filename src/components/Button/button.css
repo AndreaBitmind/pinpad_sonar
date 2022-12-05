@@ -1,8 +1,9 @@
 .button {
-  background: #8c8cdb;
-  border: 1px solid black;
+  background: #fb0905;
+  border: 1px solid rgb(255, 255, 255);
   border-radius: 15px;
-  font-size: 2rem;
+  font-size: 2.5rem;
+  color: white;
   cursor: pointer;
   padding: 25px;
   margin: 4px;
@@ -11,9 +12,11 @@
   height: 70px;
   display: flex;
   align-items: center;
+  font-weight: 700;
+  font-family: sans-serif;
 }
 
 .button:hover {
-  filter: brightness(50%);
-  transition: filter 0.5s;
+  background-color: #f58d0a;
+  transition: 0.5s;
 }
