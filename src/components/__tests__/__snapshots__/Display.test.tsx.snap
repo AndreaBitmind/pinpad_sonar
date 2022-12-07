@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given a Display component When it's rendered in the screen Then it should show the Display component 1`] = `
+<div
+  className="display"
+>
+  *
+  *
+  *
+  5
+</div>
+`;
