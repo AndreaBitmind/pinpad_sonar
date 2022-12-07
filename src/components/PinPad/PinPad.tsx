@@ -31,7 +31,10 @@ const PinPad = (): JSX.Element => {
   useEffect(() => {
     if (result.length === 4) {
       if (pin.toString() === result.toString()) {
-        timeOut = setTimeout(() => setDisplayedResult(messageOK), interval);
+        timeOut = setTimeout(() => {
+          setDisplayedResult(messageOK);
+          attempt = 0;
+        }, interval);
       } else {
         attempt++;
         timeOut = setTimeout(() => setDisplayedResult(messageERROR), interval);
