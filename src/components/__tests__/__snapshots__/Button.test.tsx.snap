@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given a Button component When it's rendered in the screen Then it should show the Button component 1`] = `
+<button
+  className="button"
+  onClick={[Function]}
+>
+  5
+</button>
+`;
