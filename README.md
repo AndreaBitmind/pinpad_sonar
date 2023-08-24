@@ -18,15 +18,15 @@ Visit https://andreamartinez-pinpad-sonar.netlify.app to view the project online
 
   <br>
 
-## Installation and Usage
+## Built with 
+- Visual Code Studio: as code editor
+- CSS
+- React
+- Typescript
+- Node
+- Jest
 
-Follow these steps to set up and run the Pin Pad Sonar project:
-
-### Prerequisites
-
-- Node.js (>= 14.0.0)
-- npm
-
+<br>
 
 ## To run the project and its tests in a local environment:
 
